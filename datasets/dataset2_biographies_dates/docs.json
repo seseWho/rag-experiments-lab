@@ -1,0 +1,98 @@
+[
+  {
+    "doc_id": "BIO-ADA-001",
+    "title": "Ada Lovelace",
+    "sections": [
+      {
+        "section_id": "early_life",
+        "heading": "Early Life",
+        "content": "Ada Lovelace was born on December 10, 1815 in London."
+      },
+      {
+        "section_id": "analytical_engine_notes",
+        "heading": "Analytical Engine Notes",
+        "content": "In 1843, she published notes on Charles Babbage's Analytical Engine, including an algorithm often described as the first computer program."
+      }
+    ]
+  },
+  {
+    "doc_id": "BIO-TUR-002",
+    "title": "Alan Turing",
+    "sections": [
+      {
+        "section_id": "birth_education",
+        "heading": "Birth and Education",
+        "content": "Alan Turing was born on June 23, 1912 and later studied at King's College, Cambridge."
+      },
+      {
+        "section_id": "wartime_work",
+        "heading": "Wartime Work",
+        "content": "From 1939 to 1945, Turing worked at Bletchley Park on codebreaking, contributing to the defeat of Nazi Germany."
+      }
+    ]
+  },
+  {
+    "doc_id": "BIO-KAH-003",
+    "title": "Katherine Johnson",
+    "sections": [
+      {
+        "section_id": "nasa_start",
+        "heading": "Start at NACA/NASA",
+        "content": "Katherine Johnson joined the NACA West Area Computing unit in 1953, and later became a key mathematician at NASA."
+      },
+      {
+        "section_id": "apollo_mission",
+        "heading": "Apollo Era",
+        "content": "In 1969, her trajectory calculations supported the success of Apollo 11."
+      }
+    ]
+  },
+  {
+    "doc_id": "BIO-GRA-004",
+    "title": "Grace Hopper",
+    "sections": [
+      {
+        "section_id": "military_service",
+        "heading": "Military Service",
+        "content": "Grace Hopper joined the U.S. Naval Reserve in 1943 and worked on the Harvard Mark I computer."
+      },
+      {
+        "section_id": "compiler_work",
+        "heading": "Compiler Contributions",
+        "content": "In 1952, Hopper's team created the A-0 system, one of the earliest compilers."
+      }
+    ]
+  },
+  {
+    "doc_id": "BIO-BER-005",
+    "title": "Tim Berners-Lee",
+    "sections": [
+      {
+        "section_id": "web_proposal",
+        "heading": "Proposal of the Web",
+        "content": "In March 1989, Tim Berners-Lee proposed an information management system at CERN that became the World Wide Web."
+      },
+      {
+        "section_id": "first_website",
+        "heading": "First Website",
+        "content": "The first website went live in 1991, explaining what the web was and how to use it."
+      }
+    ]
+  },
+  {
+    "doc_id": "BIO-LAM-006",
+    "title": "Hedy Lamarr",
+    "sections": [
+      {
+        "section_id": "patent",
+        "heading": "Frequency-Hopping Patent",
+        "content": "In 1941, Hedy Lamarr and George Antheil filed a patent for a frequency-hopping communication system."
+      },
+      {
+        "section_id": "later_recognition",
+        "heading": "Recognition",
+        "content": "Lamarr received broader recognition for her technical contribution decades later, including an award in 1997."
+      }
+    ]
+  }
+]
