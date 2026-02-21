@@ -1,0 +1,98 @@
+[
+  {
+    "doc_id": "REG-AIR-001",
+    "title": "Clean Air Emissions Rule",
+    "sections": [
+      {
+        "section_id": "v1_2018_scope",
+        "heading": "Version 1.0 (2018) Scope",
+        "content": "Version 1.0 applies to factories emitting more than 80 tons of CO2 per year and requires annual emissions reports submitted by March 31."
+      },
+      {
+        "section_id": "v2_2021_update",
+        "heading": "Version 2.0 (2021) Update",
+        "content": "Version 2.0 lowers the reporting threshold to 60 tons per year and changes the reporting deadline to February 28."
+      }
+    ]
+  },
+  {
+    "doc_id": "REG-WTR-014",
+    "title": "Industrial Water Discharge Standard",
+    "sections": [
+      {
+        "section_id": "v1_2019_limits",
+        "heading": "Version 1.0 (2019) Limits",
+        "content": "Version 1.0 sets a maximum nitrate concentration of 12 mg/L in discharge water and requires quarterly sampling."
+      },
+      {
+        "section_id": "v1_1_2022_revision",
+        "heading": "Version 1.1 (2022) Revision",
+        "content": "Version 1.1 tightens nitrate concentration to 10 mg/L and adds mandatory monthly sampling for facilities near protected wetlands."
+      }
+    ]
+  },
+  {
+    "doc_id": "REG-NOISE-007",
+    "title": "Urban Construction Noise Code",
+    "sections": [
+      {
+        "section_id": "v1_2017_hours",
+        "heading": "Version 1.0 (2017) Work Hours",
+        "content": "Construction noise above 65 dB is allowed from 7:00 to 19:00 on weekdays and from 9:00 to 14:00 on Saturdays."
+      },
+      {
+        "section_id": "v2_2023_hours",
+        "heading": "Version 2.0 (2023) Work Hours",
+        "content": "Version 2.0 keeps weekday hours unchanged but prohibits noisy construction work on Saturdays in residential zones."
+      }
+    ]
+  },
+  {
+    "doc_id": "REG-FOOD-021",
+    "title": "Food Label Transparency Regulation",
+    "sections": [
+      {
+        "section_id": "v1_2020_allergens",
+        "heading": "Version 1.0 (2020) Allergen Rules",
+        "content": "Packaged foods must declare 8 major allergens and list ingredients in descending weight order."
+      },
+      {
+        "section_id": "v1_2_2024_allergens",
+        "heading": "Version 1.2 (2024) Allergen Expansion",
+        "content": "Version 1.2 expands mandatory allergen disclosure to 11 allergens, adding sesame, mustard, and lupin."
+      }
+    ]
+  },
+  {
+    "doc_id": "REG-DATA-099",
+    "title": "Citizen Data Retention Directive",
+    "sections": [
+      {
+        "section_id": "v1_2016_retention",
+        "heading": "Version 1.0 (2016) Retention Period",
+        "content": "Public agencies may retain user activity logs for up to 5 years and must provide deletion on verified request."
+      },
+      {
+        "section_id": "v2_2022_retention",
+        "heading": "Version 2.0 (2022) Retention Period",
+        "content": "Version 2.0 reduces maximum retention of user activity logs to 3 years and requires annual deletion audits."
+      }
+    ]
+  },
+  {
+    "doc_id": "REG-ENERGY-055",
+    "title": "Commercial Building Energy Efficiency Rule",
+    "sections": [
+      {
+        "section_id": "v1_2018_baseline",
+        "heading": "Version 1.0 (2018) Baseline",
+        "content": "New commercial buildings over 5,000 square meters must meet an energy use intensity target of 160 kWh/m2/year."
+      },
+      {
+        "section_id": "v2_2025_baseline",
+        "heading": "Version 2.0 (2025) Baseline",
+        "content": "Version 2.0 applies to buildings over 3,000 square meters and lowers the energy use intensity target to 130 kWh/m2/year."
+      }
+    ]
+  }
+]

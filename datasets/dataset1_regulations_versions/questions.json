@@ -1,0 +1,107 @@
+[
+  {
+    "question_id": "D1-Q01",
+    "question": "Under the latest Clean Air Emissions Rule, what is the reporting threshold in tons of CO2 per year?",
+    "expected_answer": "60 tons of CO2 per year.",
+    "expected_doc_id": "REG-AIR-001",
+    "expected_section_id": "v2_2021_update"
+  },
+  {
+    "question_id": "D1-Q02",
+    "question": "What reporting deadline was used in Clean Air Emissions Rule version 1.0?",
+    "expected_answer": "March 31.",
+    "expected_doc_id": "REG-AIR-001",
+    "expected_section_id": "v1_2018_scope"
+  },
+  {
+    "question_id": "D1-Q03",
+    "question": "What nitrate limit does Industrial Water Discharge Standard version 1.1 set?",
+    "expected_answer": "10 mg/L.",
+    "expected_doc_id": "REG-WTR-014",
+    "expected_section_id": "v1_1_2022_revision"
+  },
+  {
+    "question_id": "D1-Q04",
+    "question": "How often does version 1.0 of the water standard require sampling?",
+    "expected_answer": "Quarterly sampling.",
+    "expected_doc_id": "REG-WTR-014",
+    "expected_section_id": "v1_2019_limits"
+  },
+  {
+    "question_id": "D1-Q05",
+    "question": "In the 2023 Urban Construction Noise Code update, what changed about Saturdays in residential zones?",
+    "expected_answer": "Noisy construction work is prohibited on Saturdays in residential zones.",
+    "expected_doc_id": "REG-NOISE-007",
+    "expected_section_id": "v2_2023_hours"
+  },
+  {
+    "question_id": "D1-Q06",
+    "question": "According to the 2017 noise code, during what hours is noise above 65 dB allowed on weekdays?",
+    "expected_answer": "From 7:00 to 19:00 on weekdays.",
+    "expected_doc_id": "REG-NOISE-007",
+    "expected_section_id": "v1_2017_hours"
+  },
+  {
+    "question_id": "D1-Q07",
+    "question": "How many allergens must be declared under Food Label Transparency Regulation version 1.2?",
+    "expected_answer": "11 allergens.",
+    "expected_doc_id": "REG-FOOD-021",
+    "expected_section_id": "v1_2_2024_allergens"
+  },
+  {
+    "question_id": "D1-Q08",
+    "question": "Which new allergens were added in Food Label Transparency Regulation version 1.2?",
+    "expected_answer": "Sesame, mustard, and lupin.",
+    "expected_doc_id": "REG-FOOD-021",
+    "expected_section_id": "v1_2_2024_allergens"
+  },
+  {
+    "question_id": "D1-Q09",
+    "question": "Under the 2016 Citizen Data Retention Directive, what is the maximum retention period for user activity logs?",
+    "expected_answer": "Up to 5 years.",
+    "expected_doc_id": "REG-DATA-099",
+    "expected_section_id": "v1_2016_retention"
+  },
+  {
+    "question_id": "D1-Q10",
+    "question": "What additional requirement did version 2.0 of the data retention directive introduce?",
+    "expected_answer": "Annual deletion audits are required.",
+    "expected_doc_id": "REG-DATA-099",
+    "expected_section_id": "v2_2022_retention"
+  },
+  {
+    "question_id": "D1-Q11",
+    "question": "In the 2025 energy efficiency baseline, what minimum building size is covered?",
+    "expected_answer": "Buildings over 3,000 square meters.",
+    "expected_doc_id": "REG-ENERGY-055",
+    "expected_section_id": "v2_2025_baseline"
+  },
+  {
+    "question_id": "D1-Q12",
+    "question": "What energy use intensity target did version 1.0 of the commercial energy rule set?",
+    "expected_answer": "160 kWh/m2/year.",
+    "expected_doc_id": "REG-ENERGY-055",
+    "expected_section_id": "v1_2018_baseline"
+  },
+  {
+    "question_id": "D1-Q13",
+    "question": "Which regulation changed its deadline from March 31 to February 28?",
+    "expected_answer": "The Clean Air Emissions Rule.",
+    "expected_doc_id": "REG-AIR-001",
+    "expected_section_id": "v2_2021_update"
+  },
+  {
+    "question_id": "D1-Q14",
+    "question": "Which regulation reduced retention from 5 years to 3 years?",
+    "expected_answer": "The Citizen Data Retention Directive.",
+    "expected_doc_id": "REG-DATA-099",
+    "expected_section_id": "v2_2022_retention"
+  },
+  {
+    "question_id": "D1-Q15",
+    "question": "What is the current nitrate limit for facilities near protected wetlands under the water discharge standard?",
+    "expected_answer": "10 mg/L, with monthly sampling for those facilities.",
+    "expected_doc_id": "REG-WTR-014",
+    "expected_section_id": "v1_1_2022_revision"
+  }
+]

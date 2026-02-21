@@ -1,0 +1,107 @@
+[
+  {
+    "question_id": "D2-Q01",
+    "question": "When was Ada Lovelace born?",
+    "expected_answer": "December 10, 1815.",
+    "expected_doc_id": "BIO-ADA-001",
+    "expected_section_id": "early_life"
+  },
+  {
+    "question_id": "D2-Q02",
+    "question": "In what year did Ada Lovelace publish her Analytical Engine notes?",
+    "expected_answer": "1843.",
+    "expected_doc_id": "BIO-ADA-001",
+    "expected_section_id": "analytical_engine_notes"
+  },
+  {
+    "question_id": "D2-Q03",
+    "question": "What is Alan Turing's birth date?",
+    "expected_answer": "June 23, 1912.",
+    "expected_doc_id": "BIO-TUR-002",
+    "expected_section_id": "birth_education"
+  },
+  {
+    "question_id": "D2-Q04",
+    "question": "During which years did Turing work at Bletchley Park?",
+    "expected_answer": "From 1939 to 1945.",
+    "expected_doc_id": "BIO-TUR-002",
+    "expected_section_id": "wartime_work"
+  },
+  {
+    "question_id": "D2-Q05",
+    "question": "In what year did Katherine Johnson join the NACA West Area Computing unit?",
+    "expected_answer": "1953.",
+    "expected_doc_id": "BIO-KAH-003",
+    "expected_section_id": "nasa_start"
+  },
+  {
+    "question_id": "D2-Q06",
+    "question": "Which mission in 1969 was supported by Katherine Johnson's calculations?",
+    "expected_answer": "Apollo 11.",
+    "expected_doc_id": "BIO-KAH-003",
+    "expected_section_id": "apollo_mission"
+  },
+  {
+    "question_id": "D2-Q07",
+    "question": "When did Grace Hopper join the U.S. Naval Reserve?",
+    "expected_answer": "1943.",
+    "expected_doc_id": "BIO-GRA-004",
+    "expected_section_id": "military_service"
+  },
+  {
+    "question_id": "D2-Q08",
+    "question": "What early compiler system did Hopper's team create in 1952?",
+    "expected_answer": "The A-0 system.",
+    "expected_doc_id": "BIO-GRA-004",
+    "expected_section_id": "compiler_work"
+  },
+  {
+    "question_id": "D2-Q09",
+    "question": "When did Tim Berners-Lee propose the idea that became the World Wide Web?",
+    "expected_answer": "March 1989.",
+    "expected_doc_id": "BIO-BER-005",
+    "expected_section_id": "web_proposal"
+  },
+  {
+    "question_id": "D2-Q10",
+    "question": "In which year did the first website go live?",
+    "expected_answer": "1991.",
+    "expected_doc_id": "BIO-BER-005",
+    "expected_section_id": "first_website"
+  },
+  {
+    "question_id": "D2-Q11",
+    "question": "In what year did Hedy Lamarr file the frequency-hopping patent with George Antheil?",
+    "expected_answer": "1941.",
+    "expected_doc_id": "BIO-LAM-006",
+    "expected_section_id": "patent"
+  },
+  {
+    "question_id": "D2-Q12",
+    "question": "What year is mentioned for Lamarr's later technical recognition award?",
+    "expected_answer": "1997.",
+    "expected_doc_id": "BIO-LAM-006",
+    "expected_section_id": "later_recognition"
+  },
+  {
+    "question_id": "D2-Q13",
+    "question": "Who was born earlier, Ada Lovelace or Alan Turing?",
+    "expected_answer": "Ada Lovelace was born earlier.",
+    "expected_doc_id": "BIO-ADA-001",
+    "expected_section_id": "early_life"
+  },
+  {
+    "question_id": "D2-Q14",
+    "question": "Which person's biography references both 1939 and 1945?",
+    "expected_answer": "Alan Turing.",
+    "expected_doc_id": "BIO-TUR-002",
+    "expected_section_id": "wartime_work"
+  },
+  {
+    "question_id": "D2-Q15",
+    "question": "Which biography includes the date March 1989 and what event does it describe?",
+    "expected_answer": "Tim Berners-Lee; it describes his CERN proposal that became the World Wide Web.",
+    "expected_doc_id": "BIO-BER-005",
+    "expected_section_id": "web_proposal"
+  }
+]

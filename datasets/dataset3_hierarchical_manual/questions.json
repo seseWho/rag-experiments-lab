@@ -1,0 +1,107 @@
+[
+  {
+    "question_id": "D3-Q01",
+    "question": "Which access level permits entry to both the server hall and the power room?",
+    "expected_answer": "Level C.",
+    "expected_doc_id": "MAN-OPS-001",
+    "expected_section_id": "1.1"
+  },
+  {
+    "question_id": "D3-Q02",
+    "question": "After a fire alarm, where should staff assemble?",
+    "expected_answer": "At Point North.",
+    "expected_doc_id": "MAN-OPS-001",
+    "expected_section_id": "1.2"
+  },
+  {
+    "question_id": "D3-Q03",
+    "question": "How soon must the shift lead complete headcount during evacuation?",
+    "expected_answer": "Within 7 minutes.",
+    "expected_doc_id": "MAN-OPS-001",
+    "expected_section_id": "1.2"
+  },
+  {
+    "question_id": "D3-Q04",
+    "question": "When is scheduled server maintenance performed?",
+    "expected_answer": "Every second Tuesday between 01:00 and 03:00 UTC.",
+    "expected_doc_id": "MAN-OPS-002",
+    "expected_section_id": "2"
+  },
+  {
+    "question_id": "D3-Q05",
+    "question": "How much advance notice is required to notify stakeholders before maintenance?",
+    "expected_answer": "24 hours in advance.",
+    "expected_doc_id": "MAN-OPS-002",
+    "expected_section_id": "2.1"
+  },
+  {
+    "question_id": "D3-Q06",
+    "question": "What must be confirmed before closing a maintenance change ticket?",
+    "expected_answer": "All post-maintenance health checks must pass.",
+    "expected_doc_id": "MAN-OPS-002",
+    "expected_section_id": "2.2"
+  },
+  {
+    "question_id": "D3-Q07",
+    "question": "Which incident severity affects critical customer services?",
+    "expected_answer": "Severity 1.",
+    "expected_doc_id": "MAN-OPS-003",
+    "expected_section_id": "3"
+  },
+  {
+    "question_id": "D3-Q08",
+    "question": "For which severities is an incident bridge required during initial response?",
+    "expected_answer": "Severity 1 and Severity 2.",
+    "expected_doc_id": "MAN-OPS-003",
+    "expected_section_id": "3.1"
+  },
+  {
+    "question_id": "D3-Q09",
+    "question": "How often should updates be published during a Severity 1 incident?",
+    "expected_answer": "Every 15 minutes.",
+    "expected_doc_id": "MAN-OPS-003",
+    "expected_section_id": "3.2"
+  },
+  {
+    "question_id": "D3-Q10",
+    "question": "When do full backups run?",
+    "expected_answer": "Every Sunday at 03:00 UTC.",
+    "expected_doc_id": "MAN-OPS-004",
+    "expected_section_id": "4"
+  },
+  {
+    "question_id": "D3-Q11",
+    "question": "How long are daily incremental backups retained?",
+    "expected_answer": "14 days.",
+    "expected_doc_id": "MAN-OPS-004",
+    "expected_section_id": "4.1"
+  },
+  {
+    "question_id": "D3-Q12",
+    "question": "How often is a recovery drill required?",
+    "expected_answer": "On the first business day of each quarter.",
+    "expected_doc_id": "MAN-OPS-004",
+    "expected_section_id": "4.2"
+  },
+  {
+    "question_id": "D3-Q13",
+    "question": "Who approves emergency changes?",
+    "expected_answer": "The duty manager.",
+    "expected_doc_id": "MAN-OPS-005",
+    "expected_section_id": "5"
+  },
+  {
+    "question_id": "D3-Q14",
+    "question": "What is the submission lead time for normal changes?",
+    "expected_answer": "At least 3 business days before implementation.",
+    "expected_doc_id": "MAN-OPS-005",
+    "expected_section_id": "5.1"
+  },
+  {
+    "question_id": "D3-Q15",
+    "question": "Which required fields must every change request include?",
+    "expected_answer": "Risk assessment, rollback plan, owner, and validation steps.",
+    "expected_doc_id": "MAN-OPS-005",
+    "expected_section_id": "5.2"
+  }
+]

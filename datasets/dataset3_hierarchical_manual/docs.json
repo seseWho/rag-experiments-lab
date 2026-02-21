@@ -1,0 +1,128 @@
+[
+  {
+    "doc_id": "MAN-OPS-001",
+    "title": "Data Center Operations Manual",
+    "sections": [
+      {
+        "section_id": "1",
+        "heading": "1. Safety and Access",
+        "content": "All personnel must wear an ID badge. Visitors require escort approval from the shift supervisor."
+      },
+      {
+        "section_id": "1.1",
+        "heading": "1.1 Access Levels",
+        "content": "Level A allows office access only. Level B allows server hall access. Level C allows server hall and power room access."
+      },
+      {
+        "section_id": "1.2",
+        "heading": "1.2 Emergency Evacuation",
+        "content": "On fire alarm, evacuate through marked routes and assemble at Point North. The shift lead performs headcount within 7 minutes."
+      }
+    ]
+  },
+  {
+    "doc_id": "MAN-OPS-002",
+    "title": "Server Maintenance Procedure",
+    "sections": [
+      {
+        "section_id": "2",
+        "heading": "2. Maintenance Overview",
+        "content": "Scheduled maintenance occurs every second Tuesday between 01:00 and 03:00 UTC."
+      },
+      {
+        "section_id": "2.1",
+        "heading": "2.1 Pre-Maintenance Checklist",
+        "content": "Confirm backup completion, notify stakeholders 24 hours in advance, and verify rollback snapshots."
+      },
+      {
+        "section_id": "2.2",
+        "heading": "2.2 Post-Maintenance Verification",
+        "content": "Run health checks for CPU, memory, and storage latency. Close the change ticket only after all checks pass."
+      }
+    ]
+  },
+  {
+    "doc_id": "MAN-OPS-003",
+    "title": "Incident Response Playbook",
+    "sections": [
+      {
+        "section_id": "3",
+        "heading": "3. Incident Classification",
+        "content": "Severity 1 affects critical customer services, Severity 2 affects non-critical services, and Severity 3 is minor degradation."
+      },
+      {
+        "section_id": "3.1",
+        "heading": "3.1 Initial Response",
+        "content": "Acknowledge alerts within 5 minutes. Open an incident bridge for Severity 1 and Severity 2 events."
+      },
+      {
+        "section_id": "3.2",
+        "heading": "3.2 Communication Cadence",
+        "content": "For Severity 1 incidents, publish status updates every 15 minutes. For Severity 2, every 30 minutes."
+      }
+    ]
+  },
+  {
+    "doc_id": "MAN-OPS-004",
+    "title": "Backup and Recovery Manual",
+    "sections": [
+      {
+        "section_id": "4",
+        "heading": "4. Backup Policy",
+        "content": "Incremental backups run daily at 02:00 UTC. Full backups run every Sunday at 03:00 UTC."
+      },
+      {
+        "section_id": "4.1",
+        "heading": "4.1 Retention",
+        "content": "Keep daily incremental backups for 14 days and weekly full backups for 12 weeks."
+      },
+      {
+        "section_id": "4.2",
+        "heading": "4.2 Recovery Test",
+        "content": "Perform a recovery drill on the first business day of each quarter and document recovery time objective results."
+      }
+    ]
+  },
+  {
+    "doc_id": "MAN-OPS-005",
+    "title": "Change Management Standard",
+    "sections": [
+      {
+        "section_id": "5",
+        "heading": "5. Change Categories",
+        "content": "Standard changes are pre-approved, normal changes require review board approval, and emergency changes are approved by the duty manager."
+      },
+      {
+        "section_id": "5.1",
+        "heading": "5.1 Lead Times",
+        "content": "Submit normal changes at least 3 business days before implementation. Emergency changes may be implemented immediately with retrospective review."
+      },
+      {
+        "section_id": "5.2",
+        "heading": "5.2 Documentation",
+        "content": "Every change request must include risk assessment, rollback plan, owner, and validation steps."
+      }
+    ]
+  },
+  {
+    "doc_id": "MAN-OPS-006",
+    "title": "Monitoring and Alerting Guide",
+    "sections": [
+      {
+        "section_id": "6",
+        "heading": "6. Alert Priorities",
+        "content": "P1 alerts indicate service outage, P2 alerts indicate major performance degradation, and P3 alerts indicate warning conditions."
+      },
+      {
+        "section_id": "6.1",
+        "heading": "6.1 On-Call Rotation",
+        "content": "Primary on-call rotates weekly every Monday at 09:00 UTC. Secondary on-call must acknowledge escalation within 10 minutes."
+      },
+      {
+        "section_id": "6.2",
+        "heading": "6.2 Alert Tuning",
+        "content": "Review noisy alerts monthly and require at least 7 days of post-change monitoring after threshold adjustments."
+      }
+    ]
+  }
+]
