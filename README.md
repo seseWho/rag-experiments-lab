@@ -93,3 +93,41 @@ Minimum conceptual contract every configuration should declare:
 - `prompt_contract`: required response format and citation/abstention behavior.
 
 > **Why define this early:** if this contract is not fixed early, experiments are hard to compare reliably even when they look similar.
+
+## 4) Base pipeline implementation (MVP)
+
+This repository now includes a minimal `rag_core/` implementation that covers:
+
+- Ingestion + normalization with `dataset_id`, `doc_id`, `version`, `section_id` metadata.
+- Two chunking strategies: `fixed_size` and `by_headings`.
+- Deterministic `chunk_id` generation.
+- Persistent vector index versioned by `(dataset + chunking config)` under `experiments/indexes/`.
+- Basic retriever with `top_k` and score traces in `experiments/traces/`.
+- Context builder + response contract with citation IDs and a simple abstention policy.
+
+Quick run example:
+
+```bash
+python -m rag_core.run_pipeline \
+  --dataset-id dataset3_hierarchical_manual \
+  --docs-path datasets/dataset3_hierarchical_manual/docs.json \
+  --chunking-strategy by_headings \
+  --question "How do I reset the unit?"
+```
+
+## 5) Environment and dependencies
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Configure LLM connection variables:
+
+```bash
+cp .env.example .env
+# then edit .env with your keys/provider/model
+```
+
+The CLI loads `.env` automatically and reports the configured provider/model.
