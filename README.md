@@ -131,3 +131,5 @@ cp .env.example .env
 ```
 
 The CLI loads `.env` automatically and reports the configured provider/model.
+
+Current implementation uses **LangChain + OpenAI embeddings** for vectorization and retrieval scoring.

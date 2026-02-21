@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from .embeddings import build_openai_embeddings
 from .llm_config import load_llm_config
 from .pipeline import BasePipeline, PipelineConfig
 
@@ -19,6 +20,8 @@ def main() -> None:
     args = parser.parse_args()
 
     llm_cfg = load_llm_config()
+    if llm_cfg.provider != "openai":
+        raise ValueError("This implementation currently supports only LLM_PROVIDER=openai")
 
     cfg = PipelineConfig(
         dataset_id=args.dataset_id,
@@ -28,7 +31,8 @@ def main() -> None:
         chunk_overlap=args.chunk_overlap,
         top_k=args.top_k,
     )
-    pipeline = BasePipeline(cfg)
+    embedding_client = build_openai_embeddings(llm_cfg)
+    pipeline = BasePipeline(cfg, embedding_client=embedding_client)
 
     index_file = Path(cfg.index_root) / (
         f"{cfg.dataset_id}__{cfg.chunking_strategy}_s{cfg.chunk_size}_o{cfg.chunk_overlap}"

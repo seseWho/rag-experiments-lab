@@ -14,9 +14,6 @@ class LLMConfig:
     timeout_seconds: int
     openai_api_key: str | None
     openai_base_url: str
-    anthropic_api_key: str | None
-    local_llm_base_url: str
-    local_llm_api_key: str | None
 
 
 def _load_dotenv_file(dotenv_path: str = ".env") -> None:
@@ -37,13 +34,10 @@ def load_llm_config() -> LLMConfig:
     _load_dotenv_file()
     return LLMConfig(
         provider=os.getenv("LLM_PROVIDER", "openai"),
-        model=os.getenv("LLM_MODEL", "gpt-4o-mini"),
+        model=os.getenv("LLM_MODEL", "text-embedding-3-small"),
         temperature=float(os.getenv("LLM_TEMPERATURE", "0.0")),
         max_tokens=int(os.getenv("LLM_MAX_TOKENS", "1024")),
         timeout_seconds=int(os.getenv("LLM_TIMEOUT_SECONDS", "60")),
         openai_api_key=os.getenv("OPENAI_API_KEY"),
         openai_base_url=os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1"),
-        anthropic_api_key=os.getenv("ANTHROPIC_API_KEY"),
-        local_llm_base_url=os.getenv("LOCAL_LLM_BASE_URL", "http://localhost:11434/v1"),
-        local_llm_api_key=os.getenv("LOCAL_LLM_API_KEY"),
     )

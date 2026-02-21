@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .chunking import ChunkingConfig, chunk_sections
 from .contracts import ResponseContractResult, enforce_response_contract
+from .embeddings import EmbeddingClient
 from .ingestion import load_and_normalize_docs
 from .models import TraceRecord
 from .vector_store import PersistentVectorStore
@@ -25,13 +26,13 @@ class PipelineConfig:
 
 
 class BasePipeline:
-    def __init__(self, config: PipelineConfig):
+    def __init__(self, config: PipelineConfig, embedding_client: EmbeddingClient):
         self.config = config
         self.trace_path = Path(config.traces_root) / f"{config.dataset_id}_{config.chunking_strategy}.jsonl"
         self.trace_path.parent.mkdir(parents=True, exist_ok=True)
 
         index_key = f"{config.dataset_id}__{config.chunking_strategy}_s{config.chunk_size}_o{config.chunk_overlap}"
-        self.vector_store = PersistentVectorStore(Path(config.index_root) / index_key)
+        self.vector_store = PersistentVectorStore(Path(config.index_root) / index_key, embedding_client=embedding_client)
 
     def build_index(self) -> int:
         sections = load_and_normalize_docs(self.config.dataset_id, self.config.docs_path)

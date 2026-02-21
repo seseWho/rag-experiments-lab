@@ -1,4 +1,5 @@
 from rag_core.chunking import ChunkingConfig, chunk_sections
+from rag_core.embeddings import DeterministicTestEmbeddings
 from rag_core.ingestion import load_and_normalize_docs
 from rag_core.pipeline import BasePipeline, PipelineConfig
 
@@ -29,7 +30,7 @@ def test_end_to_end_pipeline_returns_citations_and_traces(tmp_path):
         index_root=str(tmp_path / "indexes"),
         traces_root=str(tmp_path / "traces"),
     )
-    pipeline = BasePipeline(cfg)
+    pipeline = BasePipeline(cfg, embedding_client=DeterministicTestEmbeddings())
     built = pipeline.build_index()
 
     assert built > 0
