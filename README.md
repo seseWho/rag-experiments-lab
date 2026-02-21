@@ -114,3 +114,20 @@ python -m rag_core.run_pipeline \
   --chunking-strategy by_headings \
   --question "How do I reset the unit?"
 ```
+
+## 5) Environment and dependencies
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Configure LLM connection variables:
+
+```bash
+cp .env.example .env
+# then edit .env with your keys/provider/model
+```
+
+The CLI loads `.env` automatically and reports the configured provider/model.
