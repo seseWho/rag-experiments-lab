@@ -1,63 +1,63 @@
-# Config Contract (Schema Mental)
+# Config Contract (Mental Schema)
 
-Este documento define el contrato conceptual de configuración para experimentos RAG.
-No obliga todavía un formato técnico (YAML/JSON), pero sí fija el lenguaje común.
+This document defines the conceptual configuration contract for RAG experiments.
+It does not enforce a specific file format yet (YAML/JSON), but it establishes shared language.
 
 ## 1. Chunking
 
-Campos recomendados:
+Recommended fields:
 
 - `strategy`: token, sentence, semantic, markdown, etc.
-- `chunk_size`: tamaño objetivo.
-- `chunk_overlap`: solapamiento entre chunks.
-- `metadata_policy`: qué metadatos persisten por `chunk_id`.
+- `chunk_size`: target chunk size.
+- `chunk_overlap`: overlap between chunks.
+- `metadata_policy`: metadata preserved for each `chunk_id`.
 
-Preguntas que debe responder:
+Questions this section must answer:
 
-- ¿Cómo se garantiza trazabilidad de `chunk_id -> doc_id -> dataset_id`?
-- ¿Cómo impacta la estrategia en recall y costo?
+- How is traceability guaranteed from `chunk_id -> doc_id -> dataset_id`?
+- How does the strategy affect recall and cost?
 
 ## 2. Retrieval
 
-Campos recomendados:
+Recommended fields:
 
 - `retriever_type`: dense, sparse, hybrid.
-- `index_id`: referencia al índice/versionado.
-- `top_k`: cantidad de candidatos recuperados.
-- `filters`: restricciones por metadata.
-- `reranker`: modelo y criterio (si aplica).
+- `index_id`: index/version reference.
+- `top_k`: number of retrieved candidates.
+- `filters`: metadata-based constraints.
+- `reranker`: model and ranking criteria (if used).
 
-Preguntas que debe responder:
+Questions this section must answer:
 
-- ¿Qué evidencias entran al prompt y por qué?
-- ¿Cómo se controla consistencia entre runs?
+- Which evidence enters the prompt, and why?
+- How is consistency controlled across runs?
 
 ## 3. Prompt Contract
 
-Campos recomendados:
+Recommended fields:
 
-- `system_prompt_version`: versión del comportamiento base.
-- `citation_policy`: formato de citas requerido.
-- `abstention_policy`: cuándo responder “no suficiente evidencia”.
-- `output_schema`: estructura de salida (texto libre/JSON estructurado).
+- `system_prompt_version`: version of base behavior.
+- `citation_policy`: required citation format.
+- `abstention_policy`: when to answer with “insufficient evidence”.
+- `output_schema`: output structure (free text or structured JSON).
 
-Preguntas que debe responder:
+Questions this section must answer:
 
-- ¿Qué constituye una respuesta válida?
-- ¿Cómo validar automáticamente cumplimiento de citas y abstención?
+- What defines a valid response?
+- How can citation and abstention compliance be validated automatically?
 
-## 4. Identidad del experimento
+## 4. Experiment identity
 
-Campos recomendados:
+Recommended fields:
 
 - `dataset_id`
 - `run_id`
-- `notes` (hipótesis y cambios respecto al baseline)
+- `notes` (hypothesis and changes vs baseline)
 
-Regla clave:
+Key rule:
 
-- Todo resultado de evaluación debe poder mapearse de forma unívoca a una configuración y a un dataset concretos.
+- Every evaluation result must map unambiguously to one configuration and one dataset.
 
-## 5. Principio operativo
+## 5. Operating principle
 
-Mantener el contrato simple pero explícito. Si aparece una nueva necesidad recurrente en >=2 experimentos, promoverla al contrato; si no, mantenerla como extensión local.
+Keep the contract simple but explicit. If a new requirement appears repeatedly in two or more experiments, promote it to the contract; otherwise keep it as a local extension.

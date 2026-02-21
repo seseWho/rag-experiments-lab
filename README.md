@@ -1,95 +1,95 @@
 # RAG Experiments Lab
 
-Laboratorio para diseñar, ejecutar y comparar experimentos de Retrieval-Augmented Generation (RAG) de forma repetible.
+A lab to design, run, and compare Retrieval-Augmented Generation (RAG) experiments in a repeatable way.
 
-## 1) Fundaciones del repo
+## 1) Repository foundations
 
-### Repo skeleton + convenciones
+### Repository skeleton + conventions
 
-Estructura base del repositorio:
+Base repository structure:
 
-- `datasets/`: versiones de datasets de evaluación y/o corpus base.
-- `rag_core/`: lógica principal de chunking, retrieval, prompting y contratos compartidos.
-- `experiments/`: definiciones de runs y artefactos experimentales por configuración.
-- `evaluation/`: métricas, scripts y reportes para comparar resultados.
-- `ui/`: visualización de resultados, dashboards o utilidades de inspección.
-- `docs/`: guías, contratos conceptuales y decisiones de diseño.
+- `datasets/`: versions of evaluation datasets and/or source corpora.
+- `rag_core/`: core logic for chunking, retrieval, prompting, and shared contracts.
+- `experiments/`: run definitions and experiment artifacts per configuration.
+- `evaluation/`: metrics, scripts, and reports used to compare results.
+- `ui/`: result visualization, dashboards, or inspection tools.
+- `docs/`: guides, conceptual contracts, and design decisions.
 
-> **Por qué va primero:** sin un esqueleto común, cada experimento tiende a inventar su propia estructura y luego comparar A/B se vuelve ambiguo o costoso.
+> **Why this comes first:** without a common skeleton, each experiment tends to invent its own structure, and A/B comparisons become ambiguous and expensive.
 
-#### Convenciones de nombres
+#### Naming conventions
 
-- `dataset_id`: identificador estable del dataset (ej. `faq_es_v1`).
-- `run_id`: identificador único de ejecución (ej. `2026-02-21_hybrid_bm25_k20`).
-- `doc_id`: ID de documento fuente dentro del dataset (ej. `doc_000123`).
-- `chunk_id`: ID de fragmento derivado de `doc_id` + política de chunking (ej. `doc_000123_c004`).
+- `dataset_id`: stable identifier for a dataset (for example: `faq_en_v1`).
+- `run_id`: unique execution identifier (for example: `2026-02-21_hybrid_bm25_k20`).
+- `doc_id`: source document ID inside a dataset (for example: `doc_000123`).
+- `chunk_id`: chunk ID derived from `doc_id` + chunking policy (for example: `doc_000123_c004`).
 
-Reglas prácticas:
+Practical rules:
 
-1. Evitar espacios y mayúsculas.
-2. Preferir formato `snake_case`.
-3. Mantener `run_id` legible (fecha + estrategia + parámetro clave).
+1. Avoid spaces and uppercase letters.
+2. Prefer `snake_case`.
+3. Keep `run_id` readable (date + strategy + key parameter).
 
-#### Extensibilidad sin sobrearquitectura
+#### Extensibility without over-architecture
 
-- Dejar **slots explícitos** (carpetas y contratos) para incorporar nuevos retrievers, rerankers y estrategias de prompt.
-- Evitar abstraer de más antes de tener al menos 2 variantes reales que justifiquen una capa común.
-
----
-
-## 2) README pedagógico (esqueleto)
-
-### ¿Qué es este laboratorio?
-
-Un entorno para iterar en RAG con disciplina experimental: misma data, cambios controlados de configuración y comparación sistemática de métricas.
-
-### Objetivo
-
-- Encontrar configuraciones de RAG que mejoren calidad factual y trazabilidad.
-- Medir trade-offs entre recuperación, precisión de citas y abstención responsable.
-
-### Cómo ejecutar (flujo sugerido)
-
-1. Preparar o elegir un `dataset_id`.
-2. Definir una configuración experimental (chunking + retrieval + prompt contract).
-3. Ejecutar una corrida y registrar `run_id`.
-4. Evaluar resultados con métricas estandarizadas.
-
-### Cómo comparar A/B
-
-- Mantener fijo el dataset y el set de preguntas.
-- Cambiar **una sola dimensión principal** por comparación (ej. chunk size o retriever).
-- Reportar métricas lado a lado con el mismo protocolo de evaluación.
-
-### Cómo leer resultados
-
-- **recall@k**: proporción de casos donde el contexto relevante aparece en los top-k recuperados.
-- **citation precision**: fracción de citas incluidas por el modelo que realmente sustentan la afirmación.
-- **abstención**: capacidad de no inventar respuesta cuando falta evidencia suficiente.
-
-Interpretación rápida:
-
-- Recall alto sin citation precision puede indicar ruido en grounding.
-- Citation precision alta con recall bajo puede indicar cobertura insuficiente.
-- Buena abstención reduce alucinación, pero en exceso puede afectar utilidad percibida.
-
-### Errores típicos (desde el principio)
-
-1. Comparar runs con datasets distintos sin marcarlo explícitamente.
-2. Cambiar múltiples parámetros en A/B y luego no poder atribuir mejoras.
-3. Medir solo exactitud textual sin revisar calidad de cita.
-4. Ignorar los casos de “no respuesta” al analizar performance.
+- Leave explicit **slots** (folders and contracts) to add retrievers, rerankers, and prompt strategies.
+- Avoid premature abstraction until at least two real variants justify a shared layer.
 
 ---
 
-## 3) Modelo de configuración (schema mental)
+## 2) Pedagogical README skeleton
 
-Ver detalle en [`docs/config_contract.md`](docs/config_contract.md).
+### What is this lab?
 
-Resumen mínimo del contrato conceptual que toda config debe declarar:
+An environment to iterate on RAG with experimental discipline: same data, controlled configuration changes, and systematic metric comparison.
 
-- `chunking`: cómo se parte y referencia el contenido.
-- `retrieval`: cómo se recupera evidencia (y con qué parámetros).
-- `prompt_contract`: qué formato de respuesta y comportamiento de citación/abstención se exige.
+### Objective
 
-> **Por qué fijarlo temprano:** si este contrato no se define al inicio, luego los experimentos no son comparables de manera confiable aunque “parezcan” similares.
+- Identify RAG configurations that improve factual quality and traceability.
+- Measure trade-offs between retrieval coverage, citation quality, and responsible abstention.
+
+### How to run (suggested flow)
+
+1. Prepare or select a `dataset_id`.
+2. Define an experiment configuration (chunking + retrieval + prompt contract).
+3. Execute a run and record `run_id`.
+4. Evaluate outputs with standardized metrics.
+
+### How to compare A/B
+
+- Keep the dataset and question set fixed.
+- Change **one primary dimension at a time** per comparison (for example chunk size or retriever).
+- Report side-by-side metrics under the same evaluation protocol.
+
+### How to read results
+
+- **recall@k**: share of cases where relevant context appears in top-k retrieved items.
+- **citation precision**: fraction of model citations that actually support the corresponding claim.
+- **abstention**: ability to avoid answering when evidence is insufficient.
+
+Quick interpretation:
+
+- High recall with low citation precision may indicate grounding noise.
+- High citation precision with low recall may indicate insufficient coverage.
+- Good abstention reduces hallucinations, but too much abstention can hurt usefulness.
+
+### Common mistakes (from day one)
+
+1. Comparing runs built on different datasets without explicit labeling.
+2. Changing multiple variables in an A/B test and losing attribution.
+3. Measuring only textual correctness without citation quality checks.
+4. Ignoring “no answer” cases during performance analysis.
+
+---
+
+## 3) Configuration model (mental schema)
+
+See details in [`docs/config_contract.md`](docs/config_contract.md).
+
+Minimum conceptual contract every configuration should declare:
+
+- `chunking`: how content is split and referenced.
+- `retrieval`: how evidence is retrieved (and with which parameters).
+- `prompt_contract`: required response format and citation/abstention behavior.
+
+> **Why define this early:** if this contract is not fixed early, experiments are hard to compare reliably even when they look similar.
