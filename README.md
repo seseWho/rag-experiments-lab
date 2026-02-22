@@ -133,3 +133,25 @@ cp .env.example .env
 The CLI loads `.env` automatically and reports the configured provider/model.
 
 Current implementation uses **LangChain + OpenAI embeddings** for vectorization and retrieval scoring.
+
+
+## 6) Experiment runner + run records
+
+Run batch A/B experiments over a fixed question set and persist a reproducible run record:
+
+```bash
+python -m rag_core.run_experiments \
+  --run-id 2026-02-22_chunking_ab \
+  --dataset-id dataset1_regulations_versions \
+  --docs-path datasets/dataset1_regulations_versions/docs.json \
+  --questions-path datasets/dataset1_regulations_versions/questions.json \
+  --config-a-chunking-strategy fixed_size \
+  --config-b-chunking-strategy by_headings
+```
+
+This generates `experiments/run_records/<run_id>/run_record.json` including:
+
+- config snapshot per variant (A/B),
+- per-question traces and responses,
+- aggregated metrics (`answered`, `abstained`, `citation_hit_rate`),
+- `context_sent_to_llm` saved as chunk IDs (not full text) for lean reproducibility.
