@@ -55,6 +55,10 @@ def test_ab_run_record_persists_snapshots_traces_and_metrics(tmp_path):
     assert first_cfg["config_snapshot"]["chunking_strategy"] == "fixed_size"
     assert first_cfg["summary"]["total_questions"] == 3
     assert "citation_hit_rate" in first_cfg["summary"]
+    assert "evidence_recall_at_k" in first_cfg["summary"]
+    assert "citation_precision" in first_cfg["summary"]
+    assert "answer_correctness" in first_cfg["summary"]
+    assert "abstention_correctness" in first_cfg["summary"]
 
     first_question = first_cfg["questions"][0]
     assert "trace" in first_question
