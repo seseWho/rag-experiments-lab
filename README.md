@@ -155,3 +155,17 @@ This generates `experiments/run_records/<run_id>/run_record.json` including:
 - per-question traces and responses,
 - aggregated metrics (`answered`, `abstained`, `citation_hit_rate`),
 - `context_sent_to_llm` saved as chunk IDs (not full text) for lean reproducibility.
+
+## 7) Minimal evaluation KPI set
+
+To ensure every run can be compared from day one, track this minimum KPI set:
+
+- **Evidence Recall@k** (`evidence_recall_at_k`): fraction of questions where expected evidence appears in retrieved top-k context.
+- **Citation Precision** (`citation_precision`): average fraction of cited chunks that match expected evidence.
+- **Answer Correctness (simple)** (`answer_correctness`): lightweight rubric scored as `0/1/2`.
+  - `0`: incorrect or unsupported answer.
+  - `1`: partially correct (token overlap heuristic).
+  - `2`: correct (expected answer content matched).
+- **Abstention Correctness** (`abstention_correctness`): whether the model abstained when it should (and answered when it should not abstain).
+
+Why this matters: without shared metrics, teams cannot learn comparatively across iterations.
