@@ -169,3 +169,21 @@ To ensure every run can be compared from day one, track this minimum KPI set:
 - **Abstention Correctness** (`abstention_correctness`): whether the model abstained when it should (and answered when it should not abstain).
 
 Why this matters: without shared metrics, teams cannot learn comparatively across iterations.
+
+
+## 8) UI Gradio como panel de laboratorio
+
+Para inspección rápida de fallas en ~30 segundos, hay un panel Gradio con cuatro pantallas:
+
+- **A/B Config + selector dataset**
+- **Top-k chunks + scores + metadata**
+- **Respuesta + citas + abstención**
+- **Métricas + delta A/B + ejemplos**
+
+Ejecutar:
+
+```bash
+python -m ui.gradio_lab_panel
+```
+
+Sugerencia de uso: primero lectura/inspección (entender por qué falla), luego mejoras visuales.
