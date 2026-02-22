@@ -8,7 +8,7 @@ from .chunking import ChunkingConfig, chunk_sections
 from .contracts import ResponseContractResult, enforce_response_contract
 from .embeddings import EmbeddingClient
 from .ingestion import load_and_normalize_docs
-from .models import TraceRecord
+from .models import RetrievalResult, TraceRecord
 from .vector_store import PersistentVectorStore
 
 
@@ -56,6 +56,17 @@ class BasePipeline:
             results=results,
             min_score_threshold=self.config.min_score_threshold,
         )
+
+    def query_with_results(self, question: str) -> tuple[ResponseContractResult, list[RetrievalResult]]:
+        results = self.vector_store.search(question, top_k=self.config.top_k)
+        record = TraceRecord(query=question, top_k=self.config.top_k, results=results)
+        self._append_trace(record)
+        response = enforce_response_contract(
+            query=question,
+            results=results,
+            min_score_threshold=self.config.min_score_threshold,
+        )
+        return response, results
 
     def _append_trace(self, record: TraceRecord) -> None:
         self.trace_path.parent.mkdir(parents=True, exist_ok=True)
