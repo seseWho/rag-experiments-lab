@@ -187,3 +187,12 @@ python -m ui.gradio_lab_panel
 ```
 
 Sugerencia de uso: primero lectura/inspección (entender por qué falla), luego mejoras visuales.
+
+## 9) Operational playbook (step by step)
+
+If you want a direct guide to run a full cycle (hypothesis -> A/B run -> metrics -> decision), see:
+
+- [`docs/operational_playbook.md`](docs/operational_playbook.md)
+
+It includes copy/paste commands and a minimal template to document decisions per `run_id`.
+
