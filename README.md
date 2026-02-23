@@ -120,7 +120,7 @@ python -m rag_core.run_pipeline \
 Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install -e .
 ```
 
 Configure LLM connection variables:
