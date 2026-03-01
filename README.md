@@ -188,7 +188,55 @@ python -m ui.gradio_lab_panel
 
 Sugerencia de uso: primero lectura/inspección (entender por qué falla), luego mejoras visuales.
 
-## 9) Operational playbook (step by step)
+## 9) Build a dataset (CLI)
+
+Use the dataset builder CLI to generate a dataset folder from `.txt`/`.md` files or a source `.json` payload:
+
+```bash
+python -m rag_core.build_dataset \
+  --dataset-id my_manual_dataset \
+  --input-path path/to/source_docs \
+  --out-dir datasets/my_manual_dataset
+```
+
+Validate the generated files:
+
+```bash
+python -m rag_core.validate_dataset \
+  --dataset-id my_manual_dataset \
+  --docs-path datasets/my_manual_dataset/docs.json \
+  --questions-path datasets/my_manual_dataset/questions.json
+```
+
+## 10) Build a dataset (UI)
+
+For manual curation, run the Gradio dataset builder UI:
+
+```bash
+python -m ui.dataset_builder_app
+```
+
+In the UI you can:
+
+- set `dataset_id` and export path (`datasets/<dataset_id>`),
+- upload multiple `.md` / `.txt` files or add a pasted document,
+- preview docs and sections before export,
+- add questions (`Q1`, `Q2`, ...) with optional expected evidence links,
+- export and run built-in schema validation (PASS/FAIL).
+
+Use the generated dataset with experiments:
+
+```bash
+python -m rag_core.run_experiments \
+  --run-id 2026-03-01_my_dataset_ab \
+  --dataset-id my_manual_dataset \
+  --docs-path datasets/my_manual_dataset/docs.json \
+  --questions-path datasets/my_manual_dataset/questions.json \
+  --config-a-chunking-strategy fixed_size \
+  --config-b-chunking-strategy by_headings
+```
+
+## 11) Operational playbook (step by step)
 
 If you want a direct guide to run a full cycle (hypothesis -> A/B run -> metrics -> decision), see:
 
